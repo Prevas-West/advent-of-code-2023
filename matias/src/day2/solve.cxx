@@ -101,7 +101,6 @@ static void part2(const std::string &input_filename) {
         std::stringstream ss(line);
         ss >> game >> gameNo >> colon;
         std::cerr << game << " " << gameNo << colon << std::flush;
-        bool applies = true;
         do {
             ss >> cubeCount >> cubeColor;
             commaOrSemicolon = cubeColor.back();

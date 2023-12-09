@@ -10,14 +10,18 @@ day1: $(patsubst %.cxx,%.o,$(wildcard src/day1/*.cxx))
 day2: $(patsubst %.cxx,%.o,$(wildcard src/day2/*.cxx))
 	$(CXX) $(addprefix ${OBJDIR}/,$^) -o $(BINDIR)/$@
 
+day3: $(patsubst %.cxx,%.o,$(wildcard src/day3/*.cxx))
+	$(CXX) $(addprefix ${OBJDIR}/,$^) -o $(BINDIR)/$@
+
 %.o: %.cxx
 	$(CXX) $(CXXFLAGS) -c $< -o ${OBJDIR}/$@
 
-all: day1 day2
+all: day1 day2 day3
 
 dirs:
 	mkdir -p ${OBJDIR}/src/day1 && \
 	mkdir -p ${OBJDIR}/src/day2 && \
+	mkdir -p ${OBJDIR}/src/day3 && \
 	mkdir -p $(BINDIR)
 
 clean: dirs
